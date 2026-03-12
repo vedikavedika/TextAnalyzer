@@ -1,0 +1,15 @@
+# Your Makefile configuration here
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall -Wextra -Iinclude
+
+TARGET = text_analyzer
+SRC = main.cpp src/TextAnalyzer.cpp
+OBJ = $(SRC:.cpp=.o)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJ)
+
+clean:
+	rm -f $(OBJ) $(TARGET)
